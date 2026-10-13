@@ -1,0 +1,25 @@
+{
+  "schema": "classroom50/classroom/v1",
+  "name": "Python Programming",
+  "short_name": "python",
+  "term": "Fall-2026",
+  "org": "setri-python-2026",
+  "team": {
+    "id": 20076451,
+    "slug": "classroom50-python"
+  },
+  "teams": {
+    "teacher": {
+      "id": 20076452,
+      "slug": "classroom50-python-teacher"
+    },
+    "hta": {
+      "id": 20076455,
+      "slug": "classroom50-python-hta"
+    },
+    "ta": {
+      "id": 20076456,
+      "slug": "classroom50-python-ta"
+    }
+  }
+}
