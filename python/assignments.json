@@ -126,6 +126,47 @@
         }
       ],
       "feedback_pr": true
+    },
+    {
+      "slug": "innlating-3",
+      "name": "3. Innlating",
+      "due": "2026-11-15T23:59:00Z",
+      "due_meta": {
+        "input": "2026-11-15T23:59:00+00:00",
+        "offset": "+00:00",
+        "source": "explicit-offset"
+      },
+      "mode": "individual",
+      "autograder": "default",
+      "tests": [
+        {
+          "name": "uppg_1: hints and win",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" guess-game uppg_1.py",
+          "points": 1
+        },
+        {
+          "name": "uppg_1: play again",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" guess-again uppg_1.py",
+          "points": 1
+        },
+        {
+          "name": "uppg_2: questions and responses",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" cai uppg_2.py",
+          "points": 1
+        },
+        {
+          "name": "pep8",
+          "type": "run",
+          "run": "pipx run pycodestyle .",
+          "timeout": 60,
+          "points": 1,
+          "show-output": true
+        }
+      ],
+      "feedback_pr": true
     }
   ]
 }
