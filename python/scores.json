@@ -17,10 +17,23 @@
               "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T10-25-42Z-d652354",
               "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...d652354c82b64fb237c5555880eb23c990bcbedb",
               "datetime": "2026-10-19T10:25:04Z",
-              "graded_at": "2026-10-19T10:25:52Z",
-              "score": 0,
-              "max-score": 0,
-              "tests": [],
+              "graded_at": "2026-10-19T10:54:20Z",
+              "score": 2,
+              "max-score": 2,
+              "tests": [
+                {
+                  "test-name": "uppgava1: 42339",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppgava2: runs",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                }
+              ],
               "submitted_by": {
                 "username": "7hpj5wv5zt",
                 "id": 344740506
@@ -48,7 +61,7 @@
           ]
         }
       ],
-      "collected_at": "2026-10-19T10:26:26Z",
+      "collected_at": "2026-10-19T10:55:14Z",
       "detected": []
     }
   }
