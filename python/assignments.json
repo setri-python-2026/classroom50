@@ -10,6 +10,12 @@
         "offset": "+00:00",
         "source": "explicit-offset"
       },
+      "available_from": "2026-10-26T00:00:00Z",
+      "available_from_meta": {
+        "input": "2026-10-26T00:00:00+00:00",
+        "offset": "+00:00",
+        "source": "explicit-offset"
+      },
       "mode": "individual",
       "autograder": "default",
       "tests": [
