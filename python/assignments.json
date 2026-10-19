@@ -1,4 +1,12 @@
 {
   "schema": "classroom50/assignments/v1",
-  "assignments": []
+  "assignments": [
+    {
+      "slug": "innlating-1",
+      "name": "1. Innlating",
+      "mode": "individual",
+      "autograder": "default",
+      "feedback_pr": true
+    }
+  ]
 }
