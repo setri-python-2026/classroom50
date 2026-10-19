@@ -4,9 +4,9 @@
     {
       "slug": "innlating-1",
       "name": "1. Innlating",
-      "due": "2026-11-01T23:59:00Z",
+      "due": "2026-10-30T23:59:00Z",
       "due_meta": {
-        "input": "2026-11-01T23:59:00+00:00",
+        "input": "2026-10-30T23:59:00+00:00",
         "offset": "+00:00",
         "source": "explicit-offset"
       },
