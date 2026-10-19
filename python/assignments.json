@@ -15,6 +15,14 @@
           "expected": "4   2   3   3   9",
           "comparison": "included",
           "points": 1
+        },
+        {
+          "name": "uppgava2: runs",
+          "type": "run",
+          "run": "python3 uppgava2.py",
+          "exit-code": 0,
+          "points": 1,
+          "show-output": true
         }
       ],
       "feedback_pr": true
