@@ -12,14 +12,14 @@
               "classroom": "python",
               "assignment_type": "individual",
               "owner": "7hpj5wv5zt",
-              "submission": "submit/2026-10-19T10-25-42Z-d652354",
-              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/d652354c82b64fb237c5555880eb23c990bcbedb",
-              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T10-25-42Z-d652354",
-              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...d652354c82b64fb237c5555880eb23c990bcbedb",
-              "datetime": "2026-10-19T10:25:04Z",
-              "graded_at": "2026-10-19T10:54:20Z",
-              "score": 2,
-              "max-score": 2,
+              "submission": "submit/2026-10-19T11-28-43Z-56d023a",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/56d023a5ca868a32fec8fc6d742ef7d4de457ba7",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T11-28-43Z-56d023a",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...56d023a5ca868a32fec8fc6d742ef7d4de457ba7",
+              "datetime": "2026-10-19T11:28:27Z",
+              "graded_at": "2026-10-19T11:28:59Z",
+              "score": 3,
+              "max-score": 3,
               "tests": [
                 {
                   "test-name": "uppgava1: 42339",
@@ -32,12 +32,136 @@
                   "passed": true,
                   "score": 1,
                   "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
                 }
               ],
               "submitted_by": {
                 "username": "7hpj5wv5zt",
                 "id": 344740506
-              }
+              },
+              "late": false
+            },
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T11-22-42Z-99e49b8",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/99e49b8e15502bc40aec83ead159ceb3c3d1219c",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T11-22-42Z-99e49b8",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...99e49b8e15502bc40aec83ead159ceb3c3d1219c",
+              "datetime": "2026-10-19T11:22:29Z",
+              "graded_at": "2026-10-19T11:22:56Z",
+              "score": 3,
+              "max-score": 3,
+              "tests": [
+                {
+                  "test-name": "uppgava1: 42339",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppgava2: runs",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                }
+              ],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              },
+              "late": false
+            },
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T11-14-49Z-2ab3c32",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/2ab3c32724f6779005e3ef3bb80aa96f00dbe77e",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T11-14-49Z-2ab3c32",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...2ab3c32724f6779005e3ef3bb80aa96f00dbe77e",
+              "datetime": "2026-10-19T11:14:35Z",
+              "graded_at": "2026-10-19T11:15:07Z",
+              "score": 2,
+              "max-score": 3,
+              "tests": [
+                {
+                  "test-name": "uppgava1: 42339",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppgava2: runs",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                }
+              ],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              },
+              "late": false
+            },
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T10-25-42Z-d652354",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/d652354c82b64fb237c5555880eb23c990bcbedb",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T10-25-42Z-d652354",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...d652354c82b64fb237c5555880eb23c990bcbedb",
+              "datetime": "2026-10-19T10:25:04Z",
+              "graded_at": "2026-10-19T11:01:03Z",
+              "score": 3,
+              "max-score": 3,
+              "tests": [
+                {
+                  "test-name": "uppgava1: 42339",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppgava2: runs",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                }
+              ],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              },
+              "late": false
             },
             {
               "schema": "classroom50/result/v1",
@@ -56,12 +180,193 @@
               "submitted_by": {
                 "username": "7hpj5wv5zt",
                 "id": 344740506
-              }
+              },
+              "late": false
             }
           ]
         }
       ],
-      "collected_at": "2026-10-19T10:55:14Z",
+      "collected_at": "2026-10-19T11:58:56Z",
+      "detected": []
+    },
+    "innlating-2": {
+      "type": "individual",
+      "entries": [
+        {
+          "owner": "7hpj5wv5zt",
+          "submissions": [
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T11-57-08Z-0428ca8",
+              "commit": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/commit/0428ca8da2f6251aaf91472ce013002db290dcfb",
+              "release": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T11-57-08Z-0428ca8",
+              "review": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/compare/2e35b49ca0e9911312fa73b21d9aac5eba5d7107...0428ca8da2f6251aaf91472ce013002db290dcfb",
+              "datetime": "2026-10-19T11:56:20Z",
+              "graded_at": "2026-10-19T11:57:25Z",
+              "score": 8,
+              "max-score": 9,
+              "tests": [
+                {
+                  "test-name": "uppg_1: 0 1 2 ... 9",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_1: 9 8 7 ... 0",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_1: 1 9 9 ... 9",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_2: triangles",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_2: nested for loops",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: 1101",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: 10000000",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: while loop",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                }
+              ],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              },
+              "late": false
+            },
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T11-56-33Z-b4a8a82",
+              "commit": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/commit/b4a8a82bf961733352a206590e83f2ccb18550bc",
+              "release": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T11-56-33Z-b4a8a82",
+              "review": "https://github.com/setri-python-2026/python-innlating-2-7hpj5wv5zt/compare/2e35b49ca0e9911312fa73b21d9aac5eba5d7107...b4a8a82bf961733352a206590e83f2ccb18550bc",
+              "datetime": "2026-10-19T11:56:18Z",
+              "graded_at": "2026-10-19T11:56:48Z",
+              "score": 5,
+              "max-score": 9,
+              "tests": [
+                {
+                  "test-name": "uppg_1: 0 1 2 ... 9",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_1: 9 8 7 ... 0",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_1: 1 9 9 ... 9",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_2: triangles",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_2: nested for loops",
+                  "passed": true,
+                  "score": 1,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: 1101",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: 10000000",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "uppg_3: while loop",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                },
+                {
+                  "test-name": "pep8",
+                  "passed": false,
+                  "score": 0,
+                  "max-score": 1
+                }
+              ],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              },
+              "late": false
+            }
+          ]
+        }
+      ],
+      "collected_at": "2026-10-19T11:58:56Z",
+      "detected": []
+    },
+    "innlating-3": {
+      "type": "individual",
+      "entries": [],
+      "collected_at": "2026-10-19T11:58:56Z",
+      "detected": []
+    },
+    "innlating-4": {
+      "type": "individual",
+      "entries": [],
+      "collected_at": "2026-10-19T11:58:56Z",
+      "detected": []
+    },
+    "innlating-5": {
+      "type": "individual",
+      "entries": [],
+      "collected_at": "2026-10-19T11:58:56Z",
       "detected": []
     }
   }
