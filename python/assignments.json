@@ -6,6 +6,17 @@
       "name": "1. Innlating",
       "mode": "individual",
       "autograder": "default",
+      "tests": [
+        {
+          "name": "uppgava1: 42339",
+          "type": "io",
+          "run": "python3 uppgava1.py",
+          "input": "42339",
+          "expected": "4   2   3   3   9",
+          "comparison": "included",
+          "points": 1
+        }
+      ],
       "feedback_pr": true
     }
   ]
