@@ -23,6 +23,14 @@
           "exit-code": 0,
           "points": 1,
           "show-output": true
+        },
+        {
+          "name": "pep8",
+          "type": "run",
+          "run": "pipx run pycodestyle .",
+          "timeout": 60,
+          "points": 1,
+          "show-output": true
         }
       ],
       "feedback_pr": true
