@@ -189,9 +189,9 @@
     {
       "slug": "innlating-4",
       "name": "4. Innlating",
-      "due": "2026-11-22T23:59:00Z",
+      "due": "2026-11-20T23:59:00Z",
       "due_meta": {
-        "input": "2026-11-22T23:59:00+00:00",
+        "input": "2026-11-20T23:59:00+00:00",
         "offset": "+00:00",
         "source": "explicit-offset"
       },
