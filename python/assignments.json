@@ -228,6 +228,56 @@
         }
       ],
       "feedback_pr": true
+    },
+    {
+      "slug": "innlating-5",
+      "name": "5. Innlating",
+      "due": "2026-11-29T23:59:00Z",
+      "due_meta": {
+        "input": "2026-11-29T23:59:00+00:00",
+        "offset": "+00:00",
+        "source": "explicit-offset"
+      },
+      "mode": "individual",
+      "autograder": "default",
+      "tests": [
+        {
+          "name": "uppg_1: compiles",
+          "type": "run",
+          "run": "python3 -m py_compile uppg_1.py",
+          "points": 1,
+          "show-output": true
+        },
+        {
+          "name": "uppg_2: compiles",
+          "type": "run",
+          "run": "python3 -m py_compile uppg_2.py",
+          "points": 1,
+          "show-output": true
+        },
+        {
+          "name": "uppg_3: compiles",
+          "type": "run",
+          "run": "python3 -m py_compile uppg_3.py",
+          "points": 1,
+          "show-output": true
+        },
+        {
+          "name": "uses numpy",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" uses-numpy uppg_1.py uppg_2.py uppg_3.py",
+          "points": 1
+        },
+        {
+          "name": "pep8",
+          "type": "run",
+          "run": "pipx run pycodestyle .",
+          "timeout": 60,
+          "points": 1,
+          "show-output": true
+        }
+      ],
+      "feedback_pr": true
     }
   ]
 }
