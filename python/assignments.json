@@ -313,10 +313,10 @@
       "slug": "test",
       "name": "0. Test",
       "description": "Test assignment: upload any file to pass",
-      "available_from": "2026-10-19T00:00:00Z",
+      "available_from": "2026-10-19T10:00:00Z",
       "available_from_meta": {
-        "input": "2026-10-19T00:00:00+00:00",
-        "offset": "+00:00",
+        "input": "2026-10-19T11:00:00+01:00",
+        "offset": "+01:00",
         "source": "explicit-offset"
       },
       "mode": "individual",
