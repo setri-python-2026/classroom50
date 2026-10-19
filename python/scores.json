@@ -1,4 +1,55 @@
 {
   "schema": "classroom50/scores/v1",
-  "assignments": {}
+  "assignments": {
+    "innlating-1": {
+      "type": "individual",
+      "entries": [
+        {
+          "owner": "7hpj5wv5zt",
+          "submissions": [
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T10-25-42Z-d652354",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/d652354c82b64fb237c5555880eb23c990bcbedb",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T10-25-42Z-d652354",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...d652354c82b64fb237c5555880eb23c990bcbedb",
+              "datetime": "2026-10-19T10:25:04Z",
+              "graded_at": "2026-10-19T10:25:52Z",
+              "score": 0,
+              "max-score": 0,
+              "tests": [],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              }
+            },
+            {
+              "schema": "classroom50/result/v1",
+              "classroom": "python",
+              "assignment_type": "individual",
+              "owner": "7hpj5wv5zt",
+              "submission": "submit/2026-10-19T10-25-12Z-8180880",
+              "commit": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/commit/818088028639d538d0e89d310b74d56db28c5ab6",
+              "release": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/releases/tag/submit%2F2026-10-19T10-25-12Z-8180880",
+              "review": "https://github.com/setri-python-2026/python-innlating-1-7hpj5wv5zt/compare/8d4b3230acfe293011480900215ae4c46aefe4fa...818088028639d538d0e89d310b74d56db28c5ab6",
+              "datetime": "2026-10-19T10:25:00Z",
+              "graded_at": "2026-10-19T10:25:23Z",
+              "score": 0,
+              "max-score": 0,
+              "tests": [],
+              "submitted_by": {
+                "username": "7hpj5wv5zt",
+                "id": 344740506
+              }
+            }
+          ]
+        }
+      ],
+      "collected_at": "2026-10-19T10:26:26Z",
+      "detected": []
+    }
+  }
 }
