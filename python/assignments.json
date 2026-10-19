@@ -40,6 +40,92 @@
         }
       ],
       "feedback_pr": true
+    },
+    {
+      "slug": "innlating-2",
+      "name": "2. Innlating",
+      "due": "2026-11-08T23:59:00Z",
+      "due_meta": {
+        "input": "2026-11-08T23:59:00+00:00",
+        "offset": "+00:00",
+        "source": "explicit-offset"
+      },
+      "mode": "individual",
+      "autograder": "default",
+      "tests": [
+        {
+          "name": "uppg_1: 0 1 2 ... 9",
+          "type": "io",
+          "run": "python3 uppg_1.py",
+          "input": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n",
+          "expected": "(\\b9\\b\\D+\\b8\\b|\\b8\\b\\D+\\b9\\b)\\D*\\Z",
+          "comparison": "regex",
+          "points": 1
+        },
+        {
+          "name": "uppg_1: 9 8 7 ... 0",
+          "type": "io",
+          "run": "python3 uppg_1.py",
+          "input": "9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n",
+          "expected": "(\\b9\\b\\D+\\b8\\b|\\b8\\b\\D+\\b9\\b)\\D*\\Z",
+          "comparison": "regex",
+          "points": 1
+        },
+        {
+          "name": "uppg_1: 1 9 9 ... 9",
+          "type": "io",
+          "run": "python3 uppg_1.py",
+          "input": "1\n9\n9\n9\n9\n9\n9\n9\n9\n9\n",
+          "expected": "\\b9\\b\\D+\\b9\\b\\D*\\Z",
+          "comparison": "regex",
+          "points": 1
+        },
+        {
+          "name": "uppg_2: triangles",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" triangles uppg_2.py",
+          "points": 1
+        },
+        {
+          "name": "uppg_2: nested for loops",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" nested-for uppg_2.py",
+          "points": 1
+        },
+        {
+          "name": "uppg_3: 1101",
+          "type": "io",
+          "run": "python3 uppg_3.py",
+          "input": "1101",
+          "expected": "\\b13\\b\\D*\\Z",
+          "comparison": "regex",
+          "points": 1
+        },
+        {
+          "name": "uppg_3: 10000000",
+          "type": "io",
+          "run": "python3 uppg_3.py",
+          "input": "10000000",
+          "expected": "\\b128\\b\\D*\\Z",
+          "comparison": "regex",
+          "points": 1
+        },
+        {
+          "name": "uppg_3: while loop",
+          "type": "run",
+          "run": "python3 \"$CLASSROOM50_BUNDLE_DIR/check.py\" uses-while uppg_3.py",
+          "points": 1
+        },
+        {
+          "name": "pep8",
+          "type": "run",
+          "run": "pipx run pycodestyle .",
+          "timeout": 60,
+          "points": 1,
+          "show-output": true
+        }
+      ],
+      "feedback_pr": true
     }
   ]
 }
