@@ -50,15 +50,15 @@
     {
       "slug": "innlating-2",
       "name": "2. Innlating",
-      "due": "2026-11-06T23:59:00Z",
+      "due": "2026-11-13T23:59:00Z",
       "due_meta": {
-        "input": "2026-11-06T23:59:00+00:00",
+        "input": "2026-11-13T23:59:00+00:00",
         "offset": "+00:00",
         "source": "explicit-offset"
       },
-      "available_from": "2026-11-02T11:00:00Z",
+      "available_from": "2026-11-06T11:00:00Z",
       "available_from_meta": {
-        "input": "2026-11-02T11:00:00+00:00",
+        "input": "2026-11-06T11:00:00+00:00",
         "offset": "+00:00",
         "source": "explicit-offset"
       },
