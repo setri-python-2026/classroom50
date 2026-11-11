@@ -70,7 +70,7 @@
           "type": "io",
           "run": "python3 uppg_1.py",
           "input": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n",
-          "expected": "(\\b9\\b\\D+\\b8\\b|\\b8\\b\\D+\\b9\\b)\\D*\\Z",
+          "expected": "(\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b8\\b|\\b8\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b9\\b)(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
@@ -79,7 +79,7 @@
           "type": "io",
           "run": "python3 uppg_1.py",
           "input": "9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n",
-          "expected": "(\\b9\\b\\D+\\b8\\b|\\b8\\b\\D+\\b9\\b)\\D*\\Z",
+          "expected": "(\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b8\\b|\\b8\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b9\\b)(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
@@ -88,7 +88,7 @@
           "type": "io",
           "run": "python3 uppg_1.py",
           "input": "1\n9\n9\n9\n9\n9\n9\n9\n9\n9\n",
-          "expected": "\\b9\\b\\D+\\b9\\b\\D*\\Z",
+          "expected": "\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
@@ -109,7 +109,7 @@
           "type": "io",
           "run": "python3 uppg_3.py",
           "input": "1101",
-          "expected": "\\b13\\b\\D*\\Z",
+          "expected": "\\b13\\b(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
@@ -118,7 +118,7 @@
           "type": "io",
           "run": "python3 uppg_3.py",
           "input": "10000000",
-          "expected": "\\b128\\b\\D*\\Z",
+          "expected": "\\b128\\b(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
