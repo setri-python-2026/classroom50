@@ -88,7 +88,7 @@
           "type": "io",
           "run": "python3 uppg_1.py",
           "input": "1\n9\n9\n9\n9\n9\n9\n9\n9\n9\n",
-          "expected": "\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
+          "expected": "(\\b9\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b(9|1)\\b|\\b1\\b(?:(?!\\b\\d+\\b)[\\s\\S])+\\b9\\b)(?:(?!\\b\\d+\\b)[\\s\\S])*\\Z",
           "comparison": "regex",
           "points": 1
         },
