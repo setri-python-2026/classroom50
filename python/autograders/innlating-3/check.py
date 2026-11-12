@@ -137,38 +137,60 @@ def uses_while(path):
 
 # --- innlating-3 -----------------------------------------------------------
 
+# Programs may start with a menu ("1. Play") or a "Play? (y/n)" question
+# before the first guess, so each game is also tried with those answers first.
+START = ("", "1\n", "y\n", "yes\n")
+# Lenient about spelling: "to low", "Too low!", "Congratulation".
+PHRASES = {"too low": r"\btoo? low", "too high": r"\btoo? high",
+           "congratulations": r"congratulation"}
+
+
 def guess_game(path):
     # The hidden number is 2: guess too low, too high, then correct.
-    output, _, _ = run(path, "1\n3\n2\nno\nn\n0\nq\n", fixed_random=True)
-    text = output.lower()
-    for phrase in ("too low", "too high", "congratulations"):
-        if phrase not in text:
-            fail(f"guessing 1, 3 and then 2 (the hidden number) never "
-                 f"printed '{phrase}'")
-    ok("hints and congratulations shown")
+    missing = list(PHRASES)
+    for start in START:
+        output, _, _ = run(path, start + "1\n3\n2\nno\nn\n0\nq\n",
+                           fixed_random=True)
+        text = output.lower()
+        missing = [p for p, rx in PHRASES.items() if not re.search(rx, text)]
+        if not missing:
+            ok("hints and congratulations shown")
+    fail(f"guessing 1, 3 and then 2 (the hidden number) never printed "
+         f"'{missing[0]}'")
 
 
 def guess_again(path):
     # Win, say yes to another game, win again, then quit.
-    for yes in ("yes", "y", "1"):
-        output, _, _ = run(path, f"2\n{yes}\n2\nno\nn\n0\nq\n",
-                           fixed_random=True)
-        if output.lower().count("congratulations") >= 2:
-            ok("the player can choose to play again")
+    for start in START:
+        for yes in ("yes", "y", "Y", "1", "ja", "j"):
+            output, _, _ = run(path, f"{start}2\n{yes}\n2\nno\nn\n0\nq\n",
+                               fixed_random=True)
+            if len(re.findall(PHRASES["congratulations"],
+                              output.lower())) >= 2:
+                ok("the player can choose to play again")
     fail("after winning and answering yes/y to playing again, a second "
          "game could not be won")
 
 
 RESPONSES = ("very good", "nice work", "keep up the good work", "excellent",
-             "no. please try again", "wrong. try once more", "no. keep trying",
-             "don't give up")
+             "no please try again", "wrong try once more", "no keep trying",
+             "dont give up")
+
+
+def words(text):
+    """Lowercase, without punctuation: "No, please!" -> "no please"."""
+    return " ".join(re.sub(r"[^\w\s]", "", text.lower()).split())
 
 
 def cai(path):
-    # Answer "1" to every prompt (difficulty, operation, answers).
-    output, _, error = run(path, "1\n" * 60, fixed_random=True)
-    text = output.lower()
-    if "how much is" not in text:
+    # Answer "1" to every prompt (difficulty, operation, answers), possibly
+    # after a "Start? (y/n)" question.
+    for start in ("", "y\n", "yes\n"):
+        output, _, error = run(path, start + "1\n" * 60, fixed_random=True)
+        text = words(output)
+        if "how much is" in text:
+            break
+    else:
         fail(f"no 'How much is ...' question was asked"
              + (f" ({path} crashed: {error!r})" if error else ""))
     if not any(r in text for r in RESPONSES):
@@ -197,8 +219,9 @@ def sieve(path):
 
 
 FACES = ("Ace|Deuce|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Jack|Queen"
-         "|King")
-CARD = re.compile(rf"\b({FACES}) of (Hearts|Diamonds|Clubs|Spades)\b")
+         "|King|10|[2-9]")
+CARD = re.compile(rf"\b({FACES}) of (Hearts|Diamonds|Clubs|Spades)\b",
+                  re.IGNORECASE)
 
 
 def deal(path):
@@ -251,7 +274,9 @@ def craps_summary(path):
     output, _, error = run(path)
     if error:
         fail(f"{path} crashed: {error!r}")
-    percents = [float(p) for p in re.findall(r"(\d+(?:\.\d+)?)\s*%", output)]
+    # Accept both 49.29% and 49,29%.
+    percents = [float(p.replace(",", "."))
+                for p in re.findall(r"(\d+(?:[.,]\d+)?)\s*%", output)]
     checks = (("winning percentage (about 49.3%)", 48.8, 49.8),
               ("losing percentage (about 50.7%)", 50.2, 51.2),
               ("cumulative 100%", 99.9, 100.1))
