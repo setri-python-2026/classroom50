@@ -14,6 +14,7 @@ import random
 import re
 import runpy
 import sys
+import types
 from typing import NoReturn
 
 
@@ -56,8 +57,82 @@ def patch_random():
     random.shuffle = lambda seq, *args: None
 
 
-def run(path, stdin="", fixed_random=False):
-    """Run a student script in-process; return (stdout, globals, error)."""
+def code_objects(code):
+    yield code
+    for const in code.co_consts:
+        if isinstance(const, types.CodeType):
+            yield from code_objects(const)
+
+
+@contextlib.contextmanager
+def capture_locals(module, names, found):
+    """Save the local variables `names` when a function using them ends.
+
+    This lets e.g. `primes` live inside main() or sieve() instead of at the
+    top level. Only functions with one of these variables are watched, so
+    the many small calls in a simulation stay fast.
+    """
+    mon = getattr(sys, "monitoring", None)  # Python 3.12+
+    watched = {code for code in code_objects(module) if code is not module
+               and set(names) & set(code.co_varnames + code.co_cellvars)}
+    if mon is None or not watched:
+        yield
+        return
+
+    def save(code, *_):
+        if code not in watched:
+            return
+        frame = sys._getframe()
+        while frame is not None and frame.f_code is not code:
+            frame = frame.f_back
+        if frame is not None:
+            for name in names:
+                if name in frame.f_locals:
+                    found[name] = frame.f_locals[name]
+
+    tool, events = mon.PROFILER_ID, mon.events
+    mon.use_tool_id(tool, "check.py")
+    # Ending normally (return) or by an exception, e.g. sys.exit() in main().
+    mon.register_callback(tool, events.PY_RETURN, save)
+    mon.register_callback(tool, events.PY_UNWIND, save)
+    mon.set_events(tool, events.PY_UNWIND)
+    for code in watched:
+        mon.set_local_events(tool, code, events.PY_RETURN)
+    try:
+        yield
+    finally:
+        mon.set_events(tool, 0)
+        for code in watched:
+            mon.set_local_events(tool, code, 0)
+        mon.register_callback(tool, events.PY_RETURN, None)
+        mon.register_callback(tool, events.PY_UNWIND, None)
+        mon.free_tool_id(tool)
+
+
+def execute(path, namespace, capture):
+    """Run `path` as __main__ with `namespace` as its globals.
+
+    Variables in `capture` that are not global are taken from the function
+    that last held them.
+    """
+    with open(path, encoding="utf-8") as fh:
+        module = compile(fh.read(), path, "exec")
+    namespace.update(__name__="__main__", __file__=path)
+    found = {}
+    try:
+        with capture_locals(module, capture, found):
+            exec(module, namespace)  # noqa: S102 - running the student script
+    finally:
+        for name, value in found.items():
+            namespace.setdefault(name, value)
+
+
+def run(path, stdin="", fixed_random=False, capture=()):
+    """Run a student script in-process; return (stdout, globals, error).
+
+    `capture` names variables to look for inside functions as well, when
+    they are not defined at the top level.
+    """
     parse(path)
     if fixed_random:
         patch_random()
@@ -67,7 +142,10 @@ def run(path, stdin="", fixed_random=False):
     namespace, error = {}, None
     try:
         with contextlib.redirect_stdout(out):
-            namespace = runpy.run_path(path, run_name="__main__")
+            if capture:
+                execute(path, namespace, capture)
+            else:
+                namespace = runpy.run_path(path, run_name="__main__")
     except (EOFError, SystemExit, KeyboardInterrupt):
         pass  # ran out of input, or the script called exit()
     except Exception as exc:  # noqa: BLE001 - report any crash to the student
@@ -205,12 +283,13 @@ def is_prime(n):
 
 
 def sieve(path):
-    _, namespace, error = run(path)
+    _, namespace, error = run(path, capture=("primes",))
     if error:
         fail(f"{path} crashed: {error!r}")
     primes = namespace.get("primes")
     if not isinstance(primes, list) or len(primes) != 1000:
-        fail("expected a 1000-element list named 'primes'")
+        fail("expected a 1000-element list named 'primes' (at the top "
+             "level or inside a function)")
     for i in range(2, 1000):
         if bool(primes[i]) != is_prime(i):
             fail(f"primes[{i}] is {primes[i]}, but {i} is "
@@ -258,12 +337,13 @@ def has_function(path, name):
 
 
 def craps_dicts(path):
-    _, namespace, error = run(path)
+    _, namespace, error = run(path, capture=("wins", "losses"))
     if error:
         fail(f"{path} crashed: {error!r}")
     wins, losses = namespace.get("wins"), namespace.get("losses")
     if not isinstance(wins, dict) or not isinstance(losses, dict):
-        fail("expected dictionaries named 'wins' and 'losses'")
+        fail("expected dictionaries named 'wins' and 'losses' (at the "
+             "top level or inside a function)")
     total = sum(wins.values()) + sum(losses.values())
     if total != 1_000_000:
         fail(f"wins and losses add up to {total} games, not 1000000")
